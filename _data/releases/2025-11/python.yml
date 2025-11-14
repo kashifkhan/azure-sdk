@@ -1,15 +1,4 @@
 entries:
-- Name: azure-monitor-opentelemetry-exporter
-  Version: 1.0.0b44
-  DisplayName: OpenTelemetry Exporter
-  ServiceName: Monitor
-  VersionType: Beta
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-monitor-opentelemetry-exporter_1.0.0b44/sdk/monitor/azure-monitor-opentelemetry-exporter/CHANGELOG.md
-  ChangelogContent: |-
-    #### Bugs Fixed
-    - Fixed issue where AAD authentication for Live Metrics failed for users in sovereign cloud environments
-    ([#43392](https://github.com/Azure/azure-sdk-for-python/pull/43392))
 - Name: azure-confidentialledger-certificate
   Version: 1.0.0b1
   DisplayName: unknown
@@ -44,16 +33,6 @@ entries:
   Hidden: false
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-hdinsight_9.1.0b2/sdk/hdinsight/azure-mgmt-hdinsight/CHANGELOG.md
   ChangelogContent: ""
-- Name: azure-storage-blob
-  Version: 12.27.0
-  DisplayName: Storage - Blobs
-  ServiceName: Storage
-  VersionType: GA
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-blob_12.27.0/sdk/storage/azure-storage-blob/CHANGELOG.md
-  ChangelogContent: |-
-    #### Features Added
-    - Stable release of features from 12.27.0b1
 - Name: azure-mgmt-recoveryservicesbackup-passivestamp
   Version: 1.0.0b1
   DisplayName: Resource Management - Recoveryservicesbackup-Passivestamp
@@ -62,16 +41,6 @@ entries:
   Hidden: false
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-recoveryservicesbackup-passivestamp_1.0.0b1/sdk/recoveryservices/azure-mgmt-recoveryservicesbackup-passivestamp/CHANGELOG.md
   ChangelogContent: ""
-- Name: azure-storage-queue
-  Version: 12.14.0
-  DisplayName: Storage - Queues
-  ServiceName: Storage
-  VersionType: GA
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-queue_12.14.0/sdk/storage/azure-storage-queue/CHANGELOG.md
-  ChangelogContent: |-
-    #### Features Added
-    - Stable release of features from 12.14.0b1
 - Name: azure-mgmt-oracledatabase
   Version: 3.0.0
   DisplayName: Resource Management - Oracle Database
@@ -90,22 +59,6 @@ entries:
   ChangelogContent: |-
     #### Features Added
     - Stable release of features from 12.22.0b1
-- Name: azure-storage-file-share
-  Version: 12.23.0
-  DisplayName: Storage - Files Share
-  ServiceName: Storage
-  VersionType: GA
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-file-share_12.23.0/sdk/storage/azure-storage-file-share/CHANGELOG.md
-  ChangelogContent: |-
-    #### Bugs Fixed
-    - Fixed an issue where `ShareClient`'s `list_directories_and_files` API specified with `name_starts_with`
-    would not return all results when the share contains a large number of files and directories.
-    - Removed `__enter__` and `__exit__` attributes for all asynchronous client objects for raising explicit `TypeError`,
-    and let the `AttributeError` raise directly.
-
-    #### Features Added
-    - Stable release of features from 12.23.0b1
 - Name: azure-mixedreality-remoterendering
   Version: 1.0.0b3
   DisplayName: Azure Remote Rendering
@@ -230,14 +183,6 @@ entries:
   Hidden: false
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-network_30.0.0/sdk/network/azure-mgmt-network/CHANGELOG.md
   ChangelogContent: ""
-- Name: azure-mgmt-containerservice
-  Version: 41.0.0b1
-  DisplayName: Resource Management - Container Service
-  ServiceName: Container Service
-  VersionType: Beta
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerservice_41.0.0b1/sdk/containerservice/azure-mgmt-containerservice/CHANGELOG.md
-  ChangelogContent: ""
 - Name: azure-mgmt-cognitiveservices
   Version: 14.1.0
   DisplayName: Resource Management - Cognitive Services
@@ -282,6 +227,9 @@ entries:
   Hidden: false
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-queue_12.14.1/sdk/storage/azure-storage-queue/CHANGELOG.md
   ChangelogContent: |-
+    #### Features Added
+    - Stable release of features from 12.14.0b1
+
     #### Bugs Fixed
     - Fixed MyPy `attr-defined` errors for `QueueClient`.
 - Name: azure-storage-file-share
@@ -293,7 +241,14 @@ entries:
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-file-share_12.23.1/sdk/storage/azure-storage-file-share/CHANGELOG.md
   ChangelogContent: |-
     #### Bugs Fixed
+    - Fixed an issue where `ShareClient`'s `list_directories_and_files` API specified with `name_starts_with`
+    would not return all results when the share contains a large number of files and directories.
+    - Removed `__enter__` and `__exit__` attributes for all asynchronous client objects for raising explicit `TypeError`,
+    and let the `AttributeError` raise directly.
     - Fixed MyPy `attr-defined` errors for `ShareClient`, `ShareDirectoryClient`, and `ShareFileClient`.
+
+    #### Features Added
+    - Stable release of features from 12.23.0b1
 - Name: azure-storage-blob
   Version: 12.27.1
   DisplayName: Storage - Blobs
@@ -302,16 +257,11 @@ entries:
   Hidden: false
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-storage-blob_12.27.1/sdk/storage/azure-storage-blob/CHANGELOG.md
   ChangelogContent: |-
+    #### Features Added
+    - Stable release of features from 12.27.0b1
+
     #### Bugs Fixed
     - Fixed MyPy `attr-defined` errors for `BlobClient`.
-- Name: azure-mgmt-netapp
-  Version: 14.0.0b4
-  DisplayName: Resource Management - NetApp Files
-  ServiceName: NetApp Files
-  VersionType: Beta
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-netapp_14.0.0b4/sdk/netapp/azure-mgmt-netapp/CHANGELOG.md
-  ChangelogContent: ""
 - Name: azure-eventhub
   Version: 5.15.1
   DisplayName: Event Hubs
@@ -509,6 +459,8 @@ entries:
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-monitor-opentelemetry-exporter_1.0.0b45/sdk/monitor/azure-monitor-opentelemetry-exporter/CHANGELOG.md
   ChangelogContent: |-
     #### Bugs Fixed
+    - Fixed issue where AAD authentication for Live Metrics failed for users in sovereign cloud environments
+    ([#43392](https://github.com/Azure/azure-sdk-for-python/pull/43392))
     - Modified logic for message body on Microsoft.ApplicationInsights.MessageData to include default message for messages with empty body and export logs
     ([#43091](https://github.com/Azure/azure-sdk-for-python/pull/43091))
 
