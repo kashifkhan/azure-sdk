@@ -376,31 +376,6 @@ entries:
   Hidden: false
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-containerservice_40.1.0/sdk/containerservice/azure-mgmt-containerservice/CHANGELOG.md
   ChangelogContent: ""
-- Name: azure-ai-evaluation
-  Version: 1.13.0
-  DisplayName: AI Evaluation
-  ServiceName: Cognitive Services
-  VersionType: GA
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-evaluation_1.13.0/sdk/evaluation/azure-ai-evaluation/CHANGELOG.md
-  ChangelogContent: |-
-    #### Features Added
-
-    - Updated `IndirectAttack` risk category for RedTeam to `IndirectJailbreak` to better reflect its purpose. This change allows users to apply cross-domain prompt injection (XPIA) attack strategies across all risk categories, enabling more comprehensive security testing of AI systems against indirect prompt injection attacks during red teaming.
-    - Added `TaskAdherence`, `SensitiveDataLeakage`, and `ProhibitedActions` as cloud-only agent safety risk categories for red teaming.
-    - Updated all evaluators' output to be of the following schema:
-    - `gpt_{evaluator_name}`, `{evaluator_name}`: float score,
-    - `{evaluator_name}_result`: pass/fail based on threshold,
-    - `{evaluator_name}_reason`, `{evaluator_name}_threshold`
-    - `{evaluator_name}_prompt_tokens`, `{evaluator_name}_completion_tokens`, `{evaluator_name}_total_tokens`, `{evaluator_name}_finish_reason`
-    - `{evaluator_name}_model`: model used for evaluation
-    - `{evaluator_name}_sample_input`, `{evaluator_name}_sample_output`: input and output used for evaluation
-
-    This change standardizes the output format across all evaluators and follows OTel convention.
-
-    #### Bugs Fixed
-
-    - `image_tag` parameter in `AzureOpenAIPythonGrader` is now optional.
 - Name: azure-ai-voicelive
   Version: 1.1.0
   DisplayName: Voice Live
@@ -445,24 +420,6 @@ entries:
     #### Other Changes
 
     - Introduce azure-planetarycomputer.
-- Name: azure-ai-evaluation
-  Version: 1.13.1
-  DisplayName: AI Evaluation
-  ServiceName: Cognitive Services
-  VersionType: Patch
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-evaluation_1.13.1/sdk/evaluation/azure-ai-evaluation/CHANGELOG.md
-  ChangelogContent: |-
-    #### Bugs Fixed
-
-    - Fixed RedTeam evaluation error related to context handling for context-dependent risk categories
-    - Fixed RedTeam prompt application for model targets during Indirect Jailbreak XPIA (Cross-Platform Indirect Attack)
-
-    #### Features Added
-
-    - Improved RedTeam coverage across risk sub-categories to ensure comprehensive security testing
-    - Made RedTeam's `AttackStrategy.Tense` seed prompts dynamic to allow use of this strategy with additional risk categories
-    - Refactors error handling and result semantics in the RedTeam evaluation system to improve clarity and align with Attack Success Rate (ASR) conventions (passed=False means attack success)
 - Name: azure-identity
   Version: 1.26.0b1
   DisplayName: Identity
@@ -474,39 +431,6 @@ entries:
     #### Features Added
 
     - Added support for `WorkloadIdentityCredential` identity binding mode in AKS environments. This feature addresses Entra's limitation on the number of federated identity credentials (FICs) per managed identity by utilizing an AKS proxy that handles FIC exchanges on behalf of pods. ([#43287](https://github.com/Azure/azure-sdk-for-python/pull/43287))
-- Name: azure-ai-evaluation
-  Version: 1.13.2
-  DisplayName: AI Evaluation
-  ServiceName: Cognitive Services
-  VersionType: Patch
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-evaluation_1.13.2/sdk/evaluation/azure-ai-evaluation/CHANGELOG.md
-  ChangelogContent: |-
-    #### Bugs Fixed
-
-    - Added App Insights redaction for agent safety run telemetry so adversarial prompts are not stored in collected logs.
-- Name: azure-ai-evaluation
-  Version: 1.13.3
-  DisplayName: AI Evaluation
-  ServiceName: Cognitive Services
-  VersionType: Patch
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-evaluation_1.13.3/sdk/evaluation/azure-ai-evaluation/CHANGELOG.md
-  ChangelogContent: |-
-    #### Other Changes
-
-    - Added `scenario` property to red team evaluation request to align scores with red team concepts of attack success.
-- Name: azure-ai-evaluation
-  Version: 1.13.4
-  DisplayName: AI Evaluation
-  ServiceName: Cognitive Services
-  VersionType: Patch
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-evaluation_1.13.4/sdk/evaluation/azure-ai-evaluation/CHANGELOG.md
-  ChangelogContent: |-
-    #### Bugs Fixed
-
-    - Handle input data for evaluation result when evaluators.
 - Name: azure-ai-textanalytics
   Version: 6.0.0b2
   DisplayName: Text Analytics
@@ -515,17 +439,6 @@ entries:
   Hidden: false
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-textanalytics_6.0.0b2/sdk/textanalytics/azure-ai-textanalytics/CHANGELOG.md
   ChangelogContent: ""
-- Name: azure-ai-evaluation
-  Version: 1.13.5
-  DisplayName: AI Evaluation
-  ServiceName: Cognitive Services
-  VersionType: Patch
-  Hidden: false
-  ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-evaluation_1.13.5/sdk/evaluation/azure-ai-evaluation/CHANGELOG.md
-  ChangelogContent: |-
-    #### Bugs Fixed
-
-    - **TaskAdherenceEvaluator:** treat tool definitions as optional so evaluations with only query/response inputs no longer raise “Either 'conversation' or individual inputs must be provided.”
 - Name: azure-mgmt-netapp
   Version: 14.0.0
   DisplayName: Resource Management - NetApp Files
@@ -697,12 +610,39 @@ entries:
   Hidden: false
   ChangelogUrl: https://github.com/Azure/azure-sdk-for-python/tree/azure-ai-evaluation_1.13.6/sdk/evaluation/azure-ai-evaluation/CHANGELOG.md
   ChangelogContent: |-
+    #### Features Added
+
+    - Updated `IndirectAttack` risk category for RedTeam to `IndirectJailbreak` to better reflect its purpose. This change allows users to apply cross-domain prompt injection (XPIA) attack strategies across all risk categories, enabling more comprehensive security testing of AI systems against indirect prompt injection attacks during red teaming.
+    - Added `TaskAdherence`, `SensitiveDataLeakage`, and `ProhibitedActions` as cloud-only agent safety risk categories for red teaming.
+    - Updated all evaluators' output to be of the following schema:
+    - `gpt_{evaluator_name}`, `{evaluator_name}`: float score,
+    - `{evaluator_name}_result`: pass/fail based on threshold,
+    - `{evaluator_name}_reason`, `{evaluator_name}_threshold`
+    - `{evaluator_name}_prompt_tokens`, `{evaluator_name}_completion_tokens`, `{evaluator_name}_total_tokens`, `{evaluator_name}_finish_reason`
+    - `{evaluator_name}_model`: model used for evaluation
+    - `{evaluator_name}_sample_input`, `{evaluator_name}_sample_output`: input and output used for evaluation
+    This change standardizes the output format across all evaluators and follows OTel convention.
+
+    - Improved RedTeam coverage across risk sub-categories to ensure comprehensive security testing
+    - Made RedTeam's `AttackStrategy.Tense` seed prompts dynamic to allow use of this strategy with additional risk categories
+    - Refactors error handling and result semantics in the RedTeam evaluation system to improve clarity and align with Attack Success Rate (ASR) conventions (passed=False means attack success)
+
     #### Bugs Fixed
 
+    - `image_tag` parameter in `AzureOpenAIPythonGrader` is now optional.
+    - Fixed RedTeam evaluation error related to context handling for context-dependent risk categories
+    - Fixed RedTeam prompt application for model targets during Indirect Jailbreak XPIA (Cross-Platform Indirect Attack)
+    - Added App Insights redaction for agent safety run telemetry so adversarial prompts are not stored in collected logs.
+    - Handle input data for evaluation result when evaluators.
+    - **TaskAdherenceEvaluator:** treat tool definitions as optional so evaluations with only query/response inputs no longer raise "Either 'conversation' or individual inputs must be provided."
     - Added detection and retry handling for network errors wrapped in generic exceptions with "Error sending prompt with conversation ID" message
     - Fix results for ungrounded_attributes
     - score_mode grader improvements
     - fix for Red Team to ensure hate/unfairness evaluation rows populate when OneDP sync evaluators report results under the hate_unfairness metric name.
+
+    #### Other Changes
+
+    - Added `scenario` property to red team evaluation request to align scores with red team concepts of attack success.
 - Name: azure-mgmt-cosmosdb
   Version: 9.9.0
   DisplayName: Resource Management - Cosmos DB
